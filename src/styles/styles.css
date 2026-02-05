@@ -1,0 +1,154 @@
+.dashboard {
+  padding: 24px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  padding: 20px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+
+.stat-card.income h3 { color: #16a34a; }
+.stat-card.expense h3 { color: #dc2626; }
+.stat-card.balance h3 { color: #2563eb; }
+
+.chart-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.recent-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 1024px) {
+  .dashboard {
+    padding: 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+  }
+
+  .stat-card {
+    padding: 18px;
+  }
+
+  .chart-section {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 16px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .stat-card {
+    padding: 14px;
+  }
+
+  .stat-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .stat-card p {
+    font-size: 0.85rem;
+  }
+
+  .chart-section {
+    padding: 14px;
+    margin-bottom: 18px;
+  }
+
+  .recent-item {
+    padding: 10px 0;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    padding: 12px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .stat-card {
+    padding: 12px;
+  }
+
+  .stat-card h3 {
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+  }
+
+  .stat-card p {
+    font-size: 0.75rem;
+  }
+
+  .chart-section {
+    padding: 12px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+  }
+
+  .recent-item {
+    padding: 8px 0;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .dashboard {
+    padding: 8px;
+  }
+
+  .stats-grid {
+    gap: 8px;
+  }
+
+  .stat-card {
+    padding: 10px;
+  }
+
+  .stat-card h3 {
+    font-size: 0.75rem;
+  }
+
+  .stat-card p {
+    font-size: 0.7rem;
+  }
+
+  .chart-section {
+    padding: 10px;
+  }
+}

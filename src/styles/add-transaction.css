@@ -1,0 +1,609 @@
+/* Add Transaction Button */
+.add-transaction-btn {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.add-transaction-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.add-transaction-btn:active {
+  transform: translateY(0);
+}
+
+.btn-icon {
+  font-size: 18px;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Content */
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* Modal Error */
+.modal-error {
+  margin: 20px;
+  padding: 12px 16px;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  color: #991b1b;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Transaction Form */
+.transaction-form {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Type Selector Toggle */
+.type-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.type-btn {
+  padding: 16px 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.type-btn .type-icon {
+  font-size: 24px;
+}
+
+/* Expense Button Styling */
+.type-btn:first-child {
+  color: #dc2626;
+}
+
+.type-btn:first-child:hover {
+  border-color: #fca5a5;
+  background: #fef2f2;
+}
+
+.type-btn:first-child.active {
+  border-color: #dc2626;
+  background: #fee2e2;
+  color: #991b1b;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+/* Income Button Styling */
+.type-btn:last-child {
+  color: #16a34a;
+}
+
+.type-btn:last-child:hover {
+  border-color: #86efac;
+  background: #f0fdf4;
+}
+
+.type-btn:last-child.active {
+  border-color: #16a34a;
+  background: #dcfce7;
+  color: #15803d;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+/* Form Row & Groups */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-row.full-width {
+  grid-template-columns: 1fr;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 11px 14px;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: #f9fafb;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input::placeholder {
+  color: #d1d5db;
+}
+
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+  padding-right: 36px;
+}
+
+/* Category Select Color Coding */
+.category-select.expense {
+  border-color: #fecaca;
+}
+
+.category-select.expense:focus {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.category-select.income {
+  border-color: #86efac;
+}
+
+.category-select.income:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+/* Modal Actions */
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.btn-cancel {
+  flex: 1;
+  padding: 12px 20px;
+  background: #f3f4f6;
+  color: #374151;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-cancel:hover {
+  background: #e5e7eb;
+}
+
+.btn-submit {
+  flex: 1;
+  padding: 12px 20px;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Expense Submit Button */
+.btn-submit.expense {
+  background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.btn-submit.expense:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.4);
+}
+
+/* Income Submit Button */
+.btn-submit.income {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+}
+
+.btn-submit.income:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(22, 163, 74, 0.4);
+}
+
+.btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .modal-content {
+    max-width: 450px;
+  }
+
+  .transaction-form {
+    padding: 24px;
+    gap: 18px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .form-row.full {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 90%;
+    width: 90%;
+    border-radius: 12px;
+    max-height: 85vh;
+  }
+
+  .modal-header {
+    padding: 18px 16px;
+  }
+
+  .modal-header h2 {
+    font-size: 20px;
+  }
+
+  .transaction-form {
+    padding: 18px 16px;
+    gap: 14px;
+  }
+
+  .type-selector {
+    gap: 10px;
+  }
+
+  .type-btn {
+    padding: 12px 10px;
+    font-size: 12px;
+  }
+
+  .type-btn .type-icon {
+    font-size: 18px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .button-group {
+    gap: 10px;
+  }
+
+  .button-group button {
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .modal-content {
+    width: 95%;
+    border-radius: 12px;
+    max-height: 90vh;
+  }
+
+  .modal-header {
+    padding: 16px;
+  }
+
+  .modal-header h2 {
+    font-size: 18px;
+  }
+
+  .transaction-form {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .type-selector {
+    gap: 8px;
+  }
+
+  .type-btn {
+    padding: 12px 8px;
+    font-size: 11px;
+  }
+
+  .type-btn .type-icon {
+    font-size: 16px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .form-group label {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 16px;
+    padding: 10px 12px;
+    min-height: 44px;
+  }
+
+  .button-group {
+    gap: 8px;
+  }
+
+  .button-group button {
+    font-size: 13px;
+    padding: 11px 16px;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 16px;
+  }
+
+  .modal-content {
+    width: 100%;
+    max-width: none;
+    border-radius: 10px;
+    max-height: 85vh;
+  }
+
+  .modal-header {
+    padding: 14px;
+  }
+
+  .modal-header h2 {
+    font-size: 16px;
+  }
+
+  .close-btn {
+    font-size: 24px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .transaction-form {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .type-selector {
+    gap: 6px;
+  }
+
+  .type-btn {
+    padding: 10px 6px;
+    font-size: 10px;
+  }
+
+  .type-btn .type-icon {
+    font-size: 14px;
+  }
+
+  .form-group {
+    gap: 6px;
+  }
+
+  .form-group label {
+    font-size: 11px;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 14px;
+    padding: 9px 10px;
+    min-height: 40px;
+  }
+
+  .button-group {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .button-group button {
+    font-size: 12px;
+    padding: 10px 14px;
+    min-height: 40px;
+  }
+}
+
+@media (max-width: 375px) {
+  .modal-content {
+    border-radius: 8px;
+    max-height: 80vh;
+  }
+
+  .modal-header {
+    padding: 12px;
+  }
+
+  .modal-header h2 {
+    font-size: 14px;
+  }
+
+  .transaction-form {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .type-btn {
+    padding: 8px 4px;
+    font-size: 9px;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 12px;
+    padding: 8px 9px;
+  }
+
+  .button-group button {
+    font-size: 11px;
+    padding: 9px 12px;
+  }
+}
+

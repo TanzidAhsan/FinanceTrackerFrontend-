@@ -1,0 +1,596 @@
+/* Professional Navbar Styling */
+
+.navbar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0;
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+/* Logo Section */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-icon {
+  font-size: 28px;
+  display: inline-block;
+}
+
+/* Navigation Menu */
+.navbar-menu {
+  display: flex;
+  gap: 32px;
+  flex: 1;
+  margin-left: 48px;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 8px 0;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.nav-link.active {
+  color: white;
+  font-weight: 600;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Remove underline from login/register links */
+.login-link.active::after,
+.login-link::after,
+.login-link::before {
+  display: none !important;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+  flex-shrink: 0;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 24px;
+  height: 24px;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 2.5px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: center;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
+}
+
+/* Mobile Logout Button */
+.mobile-logout-btn {
+  display: none;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.mobile-logout-btn:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
+}
+
+.mobile-logout-btn:active {
+  transform: translateY(0);
+}
+
+/* Mobile Register Button */
+.mobile-register-btn {
+  display: none;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  text-decoration: none;
+  text-align: center;
+}
+
+.mobile-register-btn:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+.mobile-register-btn:active {
+  transform: translateY(0);
+}
+
+/* Right Section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* User Section */
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-name {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  font-size: 14px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  backdrop-filter: blur(10px);
+}
+
+/* Logout Button */
+.logout-btn {
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.logout-btn:active {
+  transform: scale(0.98);
+}
+
+/* Auth Links */
+.auth-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.login-link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  padding: 8px 0;
+  position: static;
+  border: none;
+  background: none;
+}
+
+.login-link:hover {
+  color: white;
+  background: none;
+}
+
+.register-btn {
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.register-btn:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(16, 185, 129, 0.4);
+}
+
+.register-btn:active {
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 0 18px;
+    height: 65px;
+  }
+
+  .navbar-menu {
+    gap: 24px;
+    margin-left: 36px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .navbar-right {
+    gap: 18px;
+  }
+
+  .register-btn {
+    padding: 9px 20px;
+    font-size: 13px;
+  }
+
+  .logout-btn {
+    padding: 8px 18px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 14px;
+    height: 58px;
+    flex-wrap: wrap;
+  }
+
+  .navbar-logo {
+    font-size: 18px;
+    gap: 6px;
+    order: 1;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 3;
+  }
+
+  .navbar-menu {
+    display: none;
+    gap: 0;
+    flex: 1;
+    margin-left: 0;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    position: absolute;
+    top: 58px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 16px 14px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideDown 0.3s ease-out;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .nav-link {
+    font-size: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .nav-link:last-child {
+    border-bottom: none;
+  }
+
+  .nav-link.active {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 10px;
+    border-radius: 6px;
+    margin: 0 -10px;
+  }
+
+  .nav-link.active::after {
+    display: none;
+  }
+
+  .navbar-right {
+    order: 2;
+    gap: 10px;
+  }
+
+  .user-name {
+    display: none;
+  }
+
+  .user-section {
+    gap: 12px;
+  }
+
+  .auth-links {
+    gap: 6px;
+    display: none;
+  }
+
+  .login-link {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .register-btn {
+    padding: 7px 14px;
+    font-size: 11px;
+    border-radius: 6px;
+    display: none;
+  }
+
+  .mobile-register-btn {
+    display: block;
+  }
+
+  .logout-btn {
+    display: none;
+  }
+
+  .mobile-logout-btn {
+    display: block;
+  }
+
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar-container {
+    padding: 0 12px;
+    height: 56px;
+  }
+
+  .navbar-logo {
+    font-size: 16px;
+    gap: 6px;
+  }
+
+  .logo-icon {
+    font-size: 20px;
+  }
+
+  .navbar-menu {
+    top: 56px;
+    padding: 12px 12px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+    padding: 10px 0;
+  }
+
+  .nav-link.active {
+    padding: 10px 8px;
+  }
+
+  .navbar-right {
+    gap: 8px;
+  }
+
+  .auth-links {
+    gap: 4px;
+    display: none;
+  }
+
+  .login-link {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+
+  .register-btn,
+  .logout-btn {
+    padding: 6px 10px;
+    font-size: 10px;
+    min-height: 32px;
+    border-radius: 6px;
+    display: none;
+  }
+
+  .mobile-register-btn,
+  .mobile-logout-btn {
+    display: block;
+  }
+
+  .mobile-register-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+    min-height: 40px;
+  }
+
+  .user-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .user-status {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 10px;
+    height: 52px;
+  }
+
+  .navbar-logo {
+    font-size: 14px;
+    gap: 4px;
+  }
+
+  .logo-icon {
+    font-size: 18px;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .navbar-menu {
+    top: 52px;
+    padding: 10px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-link.active {
+    padding: 10px 8px;
+  }
+
+  .navbar-right {
+    gap: 6px;
+  }
+
+  .user-name {
+    display: none;
+  }
+
+  .user-section {
+    gap: 8px;
+  }
+
+  .auth-links {
+    gap: 3px;
+    display: none;
+  }
+
+  .login-link {
+    padding: 3px 6px;
+    font-size: 9px;
+  }
+
+  .register-btn,
+  .logout-btn {
+    padding: 5px 8px;
+    font-size: 9px;
+    min-height: 30px;
+    display: none;
+  }
+
+  .mobile-register-btn,
+  .mobile-logout-btn {
+    display: block;
+    padding: 10px 12px;
+    font-size: 13px;
+    min-height: 44px;
+  }
+
+  .user-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+}

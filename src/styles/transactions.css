@@ -1,0 +1,640 @@
+/* Transactions Container */
+.transactions-container {
+  padding: 32px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #f0f2f5 100%);
+  min-height: 100vh;
+}
+
+/* Transactions Header */
+.transactions-header {
+  margin-bottom: 32px;
+}
+
+.transactions-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.header-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Filters Section */
+.filters-section {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  margin-bottom: 24px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 120px;
+}
+
+.filter-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 10px 12px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: inherit;
+  background: #f9fafb;
+  transition: all 0.3s ease;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.filter-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 32px;
+}
+
+/* Search Input */
+.search-input {
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #f9fafb;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.search-input::placeholder {
+  color: #d1d5db;
+}
+
+/* Filters Row */
+.filters-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.clear-filters-btn {
+  padding: 10px 16px;
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1.5px solid #fecaca;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clear-filters-btn:hover {
+  background: #fecaca;
+  border-color: #dc2626;
+}
+
+/* Transactions Table Wrapper */
+.transactions-table-wrapper {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  overflow-x: auto;
+  margin-bottom: 24px;
+}
+
+/* Transactions Table */
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transactions-table thead {
+  background: #f9fafb;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.transactions-table th {
+  padding: 16px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.transactions-table tbody tr {
+  border-bottom: 1px solid #f3f4f6;
+  transition: all 0.2s ease;
+}
+
+.transactions-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.transactions-table td {
+  padding: 16px;
+  font-size: 14px;
+  color: #111827;
+}
+
+/* Category Badge */
+.category-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #e0e7ff;
+  color: #4338ca;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Type Badge */
+.type-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.type-badge.income {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.type-badge.expense {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Amount */
+.amount {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.amount.income {
+  color: #16a34a;
+}
+
+.amount.expense {
+  color: #dc2626;
+}
+
+/* Actions Cell */
+.actions-cell {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.action-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  background: #f3f4f6;
+}
+
+.action-btn.edit-btn:hover {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.action-btn.delete-btn:hover {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 40px 16px;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination button,
+.pagination span {
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: white;
+  color: #374151;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.pagination button:hover {
+  border-color: #667eea;
+  color: #667eea;
+  background: #f9fafb;
+}
+
+.pagination button.active {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .transactions-container {
+    padding: 28px;
+  }
+
+  .transactions-header h1 {
+    font-size: 28px;
+  }
+
+  .filters-section {
+    padding: 20px;
+  }
+
+  .filters-row {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  .transactions-container {
+    padding: 22px;
+  }
+
+  .filters-row {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 12px;
+  }
+
+  .transactions-table th,
+  .transactions-table td {
+    padding: 12px 10px;
+    font-size: 13px;
+  }
+
+  .category-badge,
+  .type-badge {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .transactions-container {
+    padding: 14px;
+  }
+
+  .transactions-header {
+    margin-bottom: 18px;
+  }
+
+  .transactions-header h1 {
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+
+  .header-subtitle {
+    font-size: 12px;
+  }
+
+  .filters-section {
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+
+  .filters-row {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 10px;
+  }
+
+  .filter-group {
+    min-width: auto;
+    gap: 6px;
+  }
+
+  .filter-group label {
+    font-size: 11px;
+  }
+
+  .filter-group input,
+  .filter-group select {
+    padding: 8px 10px;
+    font-size: 12px;
+    min-height: 36px;
+  }
+
+  .transactions-table-wrapper {
+    border-radius: 10px;
+  }
+
+  .transactions-table {
+    overflow-x: auto;
+  }
+
+  .transactions-table th,
+  .transactions-table td {
+    padding: 10px 8px;
+    font-size: 11px;
+  }
+
+  .transactions-table th {
+    font-size: 10px;
+  }
+
+  .category-badge,
+  .type-badge {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+
+  .amount {
+    font-size: 12px;
+  }
+
+  .actions-cell {
+    gap: 4px;
+  }
+
+  .action-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+    padding: 4px;
+  }
+
+  .pagination {
+    gap: 6px;
+    margin-top: 16px;
+  }
+
+  .pagination button {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 640px) {
+  .transactions-container {
+    padding: 12px;
+  }
+
+  .transactions-header h1 {
+    font-size: 20px;
+  }
+
+  .filters-section {
+    padding: 10px;
+  }
+
+  .search-input {
+    margin-bottom: 10px;
+    font-size: 14px;
+    padding: 8px 10px;
+    min-height: 36px;
+  }
+
+  .filters-row {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 8px;
+  }
+
+  .filter-group input,
+  .filter-group select {
+    font-size: 12px;
+    padding: 7px 8px;
+    min-height: 34px;
+  }
+
+  .transactions-table-wrapper {
+    border-radius: 8px;
+  }
+
+  .transactions-table th,
+  .transactions-table td {
+    padding: 8px 6px;
+    font-size: 10px;
+  }
+
+  .category-badge,
+  .type-badge {
+    padding: 3px 6px;
+    font-size: 9px;
+  }
+
+  .amount {
+    font-size: 11px;
+  }
+
+  .action-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 11px;
+  }
+
+  .empty-state {
+    padding: 16px 10px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .transactions-container {
+    padding: 10px;
+  }
+
+  .transactions-header h1 {
+    font-size: 18px;
+  }
+
+  .header-subtitle {
+    font-size: 10px;
+  }
+
+  .filters-section {
+    padding: 10px;
+    margin-bottom: 12px;
+  }
+
+  .search-input {
+    margin-bottom: 10px;
+    font-size: 14px; /* Prevent iOS zoom */
+    padding: 8px 10px;
+    min-height: 36px;
+  }
+
+  .filters-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .filter-group {
+    min-width: unset;
+  }
+
+  .filter-group label {
+    font-size: 10px;
+  }
+
+  .filter-group input,
+  .filter-group select {
+    font-size: 12px;
+    padding: 7px 8px;
+    min-height: 36px;
+  }
+
+  .transactions-table-wrapper {
+    font-size: 10px;
+    border-radius: 8px;
+    overflow-x: auto;
+  }
+
+  .transactions-table {
+    min-width: 100%;
+  }
+
+  .transactions-table th,
+  .transactions-table td {
+    padding: 8px 5px;
+    font-size: 9px;
+  }
+
+  .transactions-table th {
+    font-size: 8px;
+  }
+
+  .category-badge,
+  .type-badge {
+    padding: 3px 5px;
+    font-size: 8px;
+  }
+
+  .amount {
+    font-size: 10px;
+  }
+
+  .actions-cell {
+    gap: 3px;
+  }
+
+  .action-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 10px;
+    padding: 2px;
+  }
+
+  .empty-state {
+    padding: 14px 8px;
+    font-size: 10px;
+  }
+
+  .pagination {
+    gap: 4px;
+  }
+
+  .pagination button {
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 375px) {
+  .transactions-container {
+    padding: 8px;
+  }
+
+  .transactions-header h1 {
+    font-size: 16px;
+  }
+
+  .filters-section {
+    padding: 8px;
+  }
+
+  .search-input {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .transactions-table th,
+  .transactions-table td {
+    padding: 6px 4px;
+    font-size: 8px;
+  }
+
+  .category-badge,
+  .type-badge {
+    padding: 2px 4px;
+    font-size: 7px;
+  }
+
+  .amount {
+    font-size: 9px;
+  }
+
+  .action-btn {
+    width: 26px;
+    height: 26px;
+    font-size: 9px;
+  }
+
+  .pagination button {
+    padding: 4px 6px;
+    font-size: 8px;
+  }
+}

@@ -1,0 +1,179 @@
+.bills-container {
+  margin: 16px 0;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.bills-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.bills-header h4 {
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.bills-note {
+  margin-top: -6px;
+  margin-bottom: 8px;
+}
+
+.bills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.bill-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bill-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bills-total {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #ddd;
+  text-align: right;
+  color: #2196F3;
+  font-size: 14px;
+}
+
+/* Focus and accessibility improvements */
+.bill-card .bill-amount-input:focus {
+  outline: 3px solid rgba(102,126,234,0.25);
+  border-color: #667eea;
+  background: #fff;
+}
+
+.bill-remove-btn:focus {
+  outline: 2px solid rgba(211,47,47,0.25);
+}
+
+.bill-card div {
+  color: #222;
+}
+
+/* Slightly stronger contrast for labels */
+.bills-header h4, .bill-card > div:first-child {
+  color: #1f2d3d;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 1024px) {
+  .bills-container {
+    margin: 14px 0;
+    padding: 10px;
+  }
+
+  .bills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+  }
+
+  .bills-header h4 {
+    font-size: 13px;
+  }
+
+  .bills-total {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bills-container {
+    margin: 12px 0;
+    padding: 10px;
+    border-radius: 6px;
+  }
+
+  .bills-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .bills-header h4 {
+    font-size: 12px;
+  }
+
+  .bills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .bill-card {
+    gap: 6px;
+  }
+
+  .bills-total {
+    font-size: 12px;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  .bills-note {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bills-container {
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 6px;
+  }
+
+  .bills-header h4 {
+    font-size: 11px;
+  }
+
+  .bills-note {
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+
+  .bills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .bill-card {
+    gap: 4px;
+  }
+
+  .bill-card div {
+    font-size: 11px;
+  }
+
+  .bill-card input,
+  .bill-remove-btn {
+    font-size: 11px;
+    padding: 6px 8px;
+  }
+
+  .bills-total {
+    font-size: 11px;
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+}
